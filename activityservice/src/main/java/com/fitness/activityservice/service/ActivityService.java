@@ -49,7 +49,7 @@ public class ActivityService {
         try {
             rabbitTemplate.convertAndSend(exchange,routingKey,savedActivity);
         } catch (Exception e) {
-            log.error("Failed to Publish activity to RabbitMq : ", e);
+            log.error("Failed to Publish activity to RabbitMQ : ", e);
         }
         return mapToResponse(savedActivity);
     }
