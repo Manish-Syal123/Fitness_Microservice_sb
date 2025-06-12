@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: activity-service
+  data:
+    mongodb:
+      uri: ${ACTIVITYSERVICE_MONGODB_URI}
+      database: fitnessactivity
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+
+rabbitmq:
+  exchange:  #- Direct Exchange: Routes messages based on an exact match of the routing key.
+    name: fitness.exchange
+  queue:
+    name: activity.queue
+  routing:
+    key: activity.tracking # routing Key : - Routing keys help determine which queue receives a message.- In a direct exchange, the routing key must match exactly.
+
+# rabbitmq
+#  - A producer sends a message with the routing key activity.tracking.
+#  - The exchange fitness.exchange receives the message.
+#  - The exchange checks its bindings and routes the message to activity.queue if the routing key matches.
+
+
+#mongodb+srv://manish:<db_password>@cluster0.vkssa4a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/fitnessactivity

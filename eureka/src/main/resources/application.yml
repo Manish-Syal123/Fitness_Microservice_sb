@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: eureka
+
+
+server:
+  port: 8761  # Eureka server runs on http://localhost:8761
+
+
+eureka:
+  client:
+    register-with-eureka: false # Do you want this microservice to register with eureka? => No, because this is a eureka server and we don't want the eureka server to register with itself
+    fetch-registry: false
