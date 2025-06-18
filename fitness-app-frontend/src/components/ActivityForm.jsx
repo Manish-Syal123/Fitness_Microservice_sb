@@ -11,6 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { addActivity } from "../services/api";
 
 const ActivityForm = ({ onActivityAdded }) => {
   const [activity, setActivity] = React.useState({
@@ -23,7 +24,7 @@ const ActivityForm = ({ onActivityAdded }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // await addActivity(activity);
+      await addActivity(activity);
       onActivityAdded();
       setActivity({ type: "RUNNING", duration: "", caloriesBurned: "" });
     } catch (error) {
@@ -48,10 +49,12 @@ const ActivityForm = ({ onActivityAdded }) => {
               <SelectItem value="RUNNING">RUNNING</SelectItem>
               <SelectItem value="CYCLING">CYCLING</SelectItem>
               <SelectItem value="SWIMMING">SWIMMING</SelectItem>
-              <SelectItem value="HIKING">HIKING</SelectItem>
-              <SelectItem value="YOGA">YOGA</SelectItem>
-              <SelectItem value="WEIGHTLIFTING">WEIGHTLIFTING</SelectItem>
               <SelectItem value="WALKING">WALKING</SelectItem>
+              <SelectItem value="CARDIO">CARDIO</SelectItem>
+              <SelectItem value="YOGA">YOGA</SelectItem>
+              <SelectItem value="WEIGHT_TRAINING">WEIGHT_TRAINING</SelectItem>
+              <SelectItem value="STRETCHING">STRETCHING</SelectItem>
+              <SelectItem value="HIIT">HIIT</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
