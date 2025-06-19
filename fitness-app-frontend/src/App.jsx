@@ -13,7 +13,7 @@ import ActivityDetail from "./components/ActivityDetail";
 const ActivitiesPage = () => {
   return (
     <div className="container mx-auto p-4">
-      <ActivityForm onActivitiesAdded={() => window.location.reload()} />
+      <ActivityForm onActivityAdded={() => window.location.reload()} />
       <ActivityList />
     </div>
   );

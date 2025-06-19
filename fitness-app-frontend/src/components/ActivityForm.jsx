@@ -33,7 +33,7 @@ const ActivityForm = ({ onActivityAdded }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-4 bg-white shadow-md rounded-lg border hover:shadow-lg transition-shadow">
+    <div className="max-w-md mx-auto p-4 bg-white shadow-md rounded-lg border hover:border-[#ff6900] hover:shadow-lg transition-shadow">
       <form onSubmit={handleSubmit} className="space-y-4">
         <Label htmlFor="text">Activity Type</Label>
         <Select
