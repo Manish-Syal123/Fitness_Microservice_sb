@@ -11,6 +11,7 @@ const ActivityList = () => {
     try {
       const response = await getActivities();
       setActivities(response.data);
+      console.log("Activities fetched:", response.data);
     } catch (error) {
       console.error("Error fetching activities:", error);
     }

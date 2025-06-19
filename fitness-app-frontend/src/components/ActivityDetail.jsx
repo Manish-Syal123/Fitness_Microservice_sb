@@ -11,6 +11,7 @@ const ActivityDetail = () => {
       try {
         const response = await getActivityDetail(id);
         setActivity(response.data);
+        // console.log("Activity detail fetched:", response.data);
         setRecommendation(response.data.recommendation);
       } catch (error) {
         console.error("Error fetching activity:", error);
@@ -29,7 +30,7 @@ const ActivityDetail = () => {
       <div className="bg-white shadow-lg rounded-2xl border-2 mb-6 p-4 border-[#ff6900]">
         <h2 className="text-2xl font-semibold mb-4">Activity Details</h2>
         <p className="mb-2">
-          <span className="font-semibold">Type:</span> {activity.type}
+          <span className="font-semibold">Type:</span> {activity.activityType}
         </p>
         <p className="mb-2">
           <span className="font-semibold">Duration:</span> {activity.duration}{" "}
